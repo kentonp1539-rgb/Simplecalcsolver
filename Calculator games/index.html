@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://www.google.com/favicon.ico">
+</head>
+<body>
+
+    <!-- CALCULATOR INTERFACE -->
+    <main id="calculatorPage" class="page">
+        <div class="calc-wrapper">
+            <!-- Hidden Stealth Vault Toggle Zone -->
+            <div class="stealth-zone" title="System Mode Toggle">
+                <span class="stealth-label">DEG</span>
+                <label class="switch">
+                    <input type="checkbox" id="codeMode">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="display-area">
+                <div id="history-tape" class="history-tape"></div>
+                <div id="previous-operand" class="previous-operand"></div>
+                <div id="current-operand" class="current-operand">0</div>
+            </div>
+
+            <div class="keypad">
+                <!-- Scientific Function Row -->
+                <button class="btn-sci" data-sci="sin">sin</button>
+                <button class="btn-sci" data-sci="cos">cos</button>
+                <button class="btn-sci" data-sci="tan">tan</button>
+                <button class="btn-sci" data-sci="log">log</button>
+
+                <!-- System Controls -->
+                <button class="btn-sys" data-action="clear">AC</button>
+                <button class="btn-sys" data-action="delete">⌫</button>
+                <button class="btn-sys" data-action="percent">%</button>
+                <button class="btn-op" data-action="operator" data-value="÷">÷</button>
+
+                <!-- Numpad Grid -->
+                <button class="btn-num" data-value="7">7</button>
+                <button class="btn-num" data-value="8">8</button>
+                <button class="btn-num" data-value="9">9</button>
+                <button class="btn-op" data-action="operator" data-value="×">×</button>
+
+                <button class="btn-num" data-value="4">4</button>
+                <button class="btn-num" data-value="5">5</button>
+                <button class="btn-num" data-value="6">6</button>
+                <button class="btn-op" data-action="operator" data-value="-">−</button>
+
+                <button class="btn-num" data-value="1">1</button>
+                <button class="btn-num" data-value="2">2</button>
+                <button class="btn-num" data-value="3">3</button>
+                <button class="btn-op" data-action="operator" data-value="+">+</button>
+
+                <button class="btn-num zero-btn" data-value="0">0</button>
+                <button class="btn-num" data-value=".">.</button>
+                <button class="btn-op equals-btn" data-action="equals">=</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- SYSTEM VAULT HUB -->
+    <main id="gamePage" class="page hidden">
+        <div class="vault-container">
+            <header class="vault-header">
+                <div>
+                    <h1>System Vault Hub</h1>
+                    <p class="warning-text">Press <strong>ESC</strong> instantly for emergency lockdown.</p>
+                </div>
+                <div class="vault-controls">
+                    <input type="text" id="searchInput" placeholder="Search verified tools..." class="search-input">
+                    <button id="lockBtn" class="btn-lock">🔒 Lock Calculator</button>
+                </div>
+            </header>
+            
+            <div class="games-grid" id="gamesGrid">
+                <!-- Dynamically Injected Content -->
+            </div>
+        </div>
+    </main>
+
+    <!-- PURE GAME PLAYER (Zero Clutter) -->
+    <main id="playerPage" class="page hidden">
+        <div class="player-container">
+            <header class="player-nav">
+                <button id="backToVaultBtn" class="btn-nav">← Back to Hub</button>
+                <h2 id="playerTitle">Loading Client...</h2>
+                <div class="player-actions">
+                    <button id="stealthTabBtn" class="btn-stealth" title="Opens in secure unblockable tab">↗ Stealth Tab</button>
+                    <button id="fullscreenBtn" class="btn-full">⛶ Fullscreen</button>
+                </div>
+            </header>
+            
+            <div class="iframe-container" id="iframeContainer">
+                <div id="loader" class="loader"></div>
+                <iframe id="gameFrame" src="" allowfullscreen loading="eager" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-pointer-lock"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
